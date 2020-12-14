@@ -1,6 +1,6 @@
 package com.audioappraiser.audioapp;
 
-import com.audioappraiser.audioapp.creation_reqs.*;
+import com.audioappraiser.audioapp.creationreqs.*;
 import com.audioappraiser.audioapp.modelrepos.*;
 import com.audioappraiser.audioapp.model.*;
 

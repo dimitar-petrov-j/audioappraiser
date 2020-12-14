@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
-import HomeAlbumContent from "./HomeAlbumContent.js";
+import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header.js";
-import {Home, Charts, ProjectPage} from "./components.js"
-import { Link, withRouter } from "react-router-dom";
-import CardDeck from 'react-bootstrap/CardDeck'
-import './App.css';
+import {Home, Charts, ProjectPage} from "./components.js";
+// import { Link, withRouter } from "react-router-dom";
+// import CardDeck from "react-bootstrap/CardDeck;"
+import "./App.css";
 
 class App extends Component {
 
@@ -35,7 +33,7 @@ class App extends Component {
                         <Route path="/" exact component={()=> <Home/>} />
                         <Route path="/charts" exact component={()=> <Charts/>} />
                         {/* <Route path="/" exact component={()=> <Home/>} /> */}
-                        <Route path="/content" exact component={() => <ProjectPage/>}/>
+                        <Route path="/content" component={() => <ProjectPage/>}/>
                     </Switch>
                 </Router>
             </div>

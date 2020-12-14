@@ -4,9 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.util.List;
 import java.util.Objects;
-import javax.persistence.*;
 import java.util.Date;
-
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +13,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name= "artists")
-public class Artist {
+public class Artist{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,4 +1,4 @@
-package com.audioappraiser.audioapp.creation_reqs;
+package com.audioappraiser.audioapp.creationreqs;
 
 public class UserCreationRequest {
     private String username;

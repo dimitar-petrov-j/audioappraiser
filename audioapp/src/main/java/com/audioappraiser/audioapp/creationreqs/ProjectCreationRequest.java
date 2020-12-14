@@ -1,7 +1,6 @@
-package com.audioappraiser.audioapp.creation_reqs;
+package com.audioappraiser.audioapp.creationreqs;
 
 import com.audioappraiser.audioapp.model.AlbumType;
-import com.audioappraiser.audioapp.model.Artist;
 import lombok.Data;
 
 import java.util.Date;
@@ -15,4 +14,5 @@ public class ProjectCreationRequest {
     private Integer reviews;
     private Date release_date;
     private AlbumType type;
+    private String image;
 }

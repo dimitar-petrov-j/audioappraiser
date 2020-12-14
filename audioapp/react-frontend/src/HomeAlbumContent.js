@@ -7,9 +7,11 @@ function HomeAlbumContent(props)
     console.log(props)
 
     function goToAlbumDetail(){
-      let change = window.location.href;
+      let change_initial = window.location.href;
+      let change = change_initial.replace(/charts/g, "content");
       change = change + "/" + props.content.id;
-      window.location.href=change;
+      console.log(change)
+      window.location.href= change;
     }
 
     return(

@@ -25,7 +25,7 @@ public class Project {
     private Date release_date;
     @Enumerated(EnumType.STRING)
     private AlbumType type;
-    @Transient byte[] image;
+    private String image;
 
 //    @ManyToOne
 //    @JoinColumn(name = "artist_id")
