@@ -19,7 +19,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "semi": ["warning", "always"],
-        "quotes": ["warning", "double"]
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
     }
 };

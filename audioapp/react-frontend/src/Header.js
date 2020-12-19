@@ -1,9 +1,9 @@
-import React from 'react';
-import './App.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import { Link, withRouter } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "./App.css";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import {Link, withRouter} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Header()
 {

@@ -1,8 +1,8 @@
-import React, { useState, useEffect} from 'react';
-import './App.css';
+import React, { useState, useEffect} from "react";
+import "./App.css";
 import ProjectService from "./services/ProjectService.js";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 
 
@@ -19,10 +19,10 @@ function ProjectPage(){
 
 
         ProjectService.getProjectById(value).then((response) => {
-            readyAlbum(response.data)
+            readyAlbum(response.data);
         });
 
-    }, [])
+    }, []);
 
     return(
         <Jumbotron>
