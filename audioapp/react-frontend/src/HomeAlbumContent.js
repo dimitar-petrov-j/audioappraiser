@@ -10,8 +10,10 @@ function HomeAlbumContent(props)
     const [content] = useState([props.content]);
 
     function goToAlbumDetail(){
+      //VERY SHODDY WAY OF REDIRECTING - LOOK FOR STH ELSE
       let change_initial = window.location.href;
-      let change = change_initial.replace(/charts/g, "content");
+      let change_replace_1 = change_initial.replace(/charts/g, "content");
+      let change = change_replace_1.replace(/search/, "content");
       change = change + "/" + content[0].id;
       console.log(change);
       window.location.href= change;

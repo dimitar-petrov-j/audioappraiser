@@ -26,16 +26,6 @@ function Charts(){
             readyAlbums(response.data);
         });
     }, []);
-
-
-
-    // function testProjects(){
-    //     console.log(albums)
-    // }
-
-    // function renderCharts(){
-        
-    // }
     
     return(
         <div className="card-deck">

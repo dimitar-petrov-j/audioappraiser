@@ -18,6 +18,7 @@ public class AudioappApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/projects-javaconfig").allowedOrigins("http://localhost:8080");
+				registry.addMapping("/projects?search").allowedOrigins("http://localhost:8080");
 			}
 		};
 	}

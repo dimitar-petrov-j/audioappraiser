@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 */
 import React from "react";
 import "./App.css";
 import Navbar from "react-bootstrap/Navbar";
@@ -8,14 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Header()
 {
     return(
-        // <div class="header">
-        //     {/* <a class="App-title">AudioAppraiser</a> */}
-        //     <img className="App-logo" src="https://i.imgur.com/n9H3tSh.png" />
-        //     <Link to="/">Home</Link>
-        //     <Link class="active" to="/charts">Charts</Link>
-        //     <Link class="right" to="/account">Account <i class="fa fa-user"/></Link>
-        // </div>
-
         <Navbar bg="dark" variant="dark" expand="lg">
           <Navbar.Brand to="/">AudioAppraiser</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

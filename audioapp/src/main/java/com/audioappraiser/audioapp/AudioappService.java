@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -48,6 +50,11 @@ public class AudioappService {
     public List<Project> readAllProjectsByRating(){
         List<Project> projects = projectRepository.findAllByOrderByRatingDesc();
         return projects;
+    }
+
+    public List<Project> readProjectsBySearch(String name){
+        List<Project> projectsWithNameMatch = projectRepository.findAllByArtistContainingOrNameContaining(name, name);
+        return projectsWithNameMatch;
     }
 
     public User readUser(Long id)
@@ -89,5 +96,6 @@ public class AudioappService {
     public void deleteArtist(Long id){
         artistRepository.deleteById(id);
     }
+    //DELETE METHODS END
 }
 

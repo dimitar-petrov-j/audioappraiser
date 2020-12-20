@@ -1,4 +1,5 @@
 import React from "react";
+// import ProjectService from "./services/ProjectService.js";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -13,6 +14,14 @@ import Carousel from "react-bootstrap/Carousel";
 
 
 function Home(){
+
+    // const [albums, readyAlbums] = useState([]);
+
+    // useEffect(() => {
+    //     ProjectService.getProjectsCharts().then((response) => {
+    //         readyAlbums(response.data);
+    //     });
+    // }, []);
 
     return(
         <Jumbotron>
@@ -164,21 +173,16 @@ function Home(){
         <Card className="bg-dark text-white">
         <Card.Img src="https://i.imgur.com/L0Np4gM.jpg" alt="Card image" />
         <Card.ImgOverlay>
-            <Card.Title>Card title</Card.Title>
+            <br/>
             <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
+            Welcome to AudioAppraiser! A public database for musical artists and commercial musical projects!
             </Card.Text>
-            <Card.Text>Last updated 3 mins ago</Card.Text>
+            <Card.Text>Currently storing 1 424 348 Artists , 4 394 470 Releases, 113 772 Labels, 79 785 111 Ratings, 2 499 210 Reviews</Card.Text>
         </Card.ImgOverlay>
         </Card>
         <br/>
         
         <img className="home-intro-content-img" src="https://i.imgur.com/n9H3tSh.png" />
-        <p>
-            Welcome to AudioAppraiser! A public database for musical artists and commercial musical projects!
-        </p> <br/>
-        <p>Currently storing 1 424 348 Artists , 4 394 470 Releases, 113 772 Labels, 79 785 111 Ratings, 2 499 210 Reviews</p>
         </Jumbotron>
     );
 }
