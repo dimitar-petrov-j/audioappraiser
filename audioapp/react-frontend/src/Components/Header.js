@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: 0 */
 import React from "react";
-import "./App.css";
+import "../App.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {Link, withRouter} from "react-router-dom";
@@ -17,7 +17,9 @@ function Header()
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/charts">Charts</Nav.Link>
               <Nav.Link as={Link} to="/search">Search</Nav.Link>
-              <Nav.Link as={Link} class="right" to="/account">Account</Nav.Link>
+
+              {/* FIX ROUTING HERE, it is set to /register only for testing */}
+              <Nav.Link as={Link} class="right" to="/register">Account</Nav.Link>
             </Nav>
           </Navbar.Collapse>
       </Navbar>
@@ -25,19 +27,3 @@ function Header()
 }
 
 export default Header;
-
-/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                        <img className="App-logo" src="https://i.imgur.com/n9H3tSh.png" />
-
-  <Navbar.Brand to="/">AudioAppraiser</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link to="/charts">Charts</Nav.Link>
-    </Nav>
-    <Nav>
-      <Nav.Link to="/account">Account <i class="fa fa-user"/></Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-  <br/>
-</Navbar> */

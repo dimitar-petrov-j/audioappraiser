@@ -15,12 +15,22 @@ public class SignupRequest {
     @Size(min = 6, max = 40)
     private String password;
 
+    private String real_name;
+
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getReal_name() {
+        return this.real_name;
+    }
+
+    public void setReal_name(String real_name) {
+        this.real_name = real_name;
     }
 
     public String getPassword() {

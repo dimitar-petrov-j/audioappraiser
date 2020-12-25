@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
-import "./App.css";
-import ProjectService from "./services/ProjectService.js";
+import "../App.css";
+import ProjectService from "../services/ProjectService.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
 

@@ -17,7 +17,6 @@ public class User {
     private Long id;
     private String username;
     private String real_name;
-    private Boolean is_private;
     private String password;
     public Set roles;
 
@@ -33,4 +32,11 @@ public class User {
         this.roles = roles;
     }
 
+    public User(){}
+
+    public User(String username, String password, String real_name){
+        this.setUsername(username);
+        this.setPassword(password);
+        this.setReal_name(real_name);
+    }
 }

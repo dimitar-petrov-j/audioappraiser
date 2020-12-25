@@ -1,12 +1,12 @@
 /* eslint no-unused-vars: 0 */
 import React, { useState} from "react";
-import ProjectService from "./services/ProjectService.js";
-import HomeAlbumContent from "./HomeAlbumContent.js";
+import ProjectService from "../services/ProjectService.js";
+import HomeAlbumContent from "../HomeAlbumContent.js";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "../App.css";
 
 function Search(){
     

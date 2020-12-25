@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from "react";
-import HomeAlbumContent from "./HomeAlbumContent.js";
-import ProjectService from "./services/ProjectService.js";
+import HomeAlbumContent from "../HomeAlbumContent.js";
+import ProjectService from "../services/ProjectService.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "../App.css";
 
 function Charts(){
 

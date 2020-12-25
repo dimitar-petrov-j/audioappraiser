@@ -16,6 +16,7 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-export { default as Home } from "./Home";
-export { default as Charts } from "./Charts";
-export { default as Search } from "./Search";
+export { default as Home } from "./Pages/Home";
+export { default as Charts } from "./Pages/Charts";
+export { default as Search } from "./Pages/Search";
+export { default as Register} from "./Pages/Account/Register";
