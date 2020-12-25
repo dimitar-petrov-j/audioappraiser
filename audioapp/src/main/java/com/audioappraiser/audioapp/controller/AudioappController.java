@@ -1,6 +1,6 @@
 package com.audioappraiser.audioapp.controller;
 
-import com.audioappraiser.audioapp.AudioappService;
+import com.audioappraiser.audioapp.service.AudioappService;
 import com.audioappraiser.audioapp.creationreqs.ArtistCreationRequest;
 import com.audioappraiser.audioapp.creationreqs.ProjectCreationRequest;
 import com.audioappraiser.audioapp.model.Artist;
@@ -8,8 +8,6 @@ import com.audioappraiser.audioapp.model.Project;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
 @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)

@@ -1,4 +1,4 @@
-package com.audioappraiser.audioapp;
+package com.audioappraiser.audioapp.service;
 
 import com.audioappraiser.audioapp.creationreqs.*;
 import com.audioappraiser.audioapp.modelrepos.*;
