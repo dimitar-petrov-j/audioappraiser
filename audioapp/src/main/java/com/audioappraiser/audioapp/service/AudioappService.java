@@ -7,7 +7,10 @@ import com.audioappraiser.audioapp.model.*;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -22,6 +25,21 @@ public class AudioappService {
     private final ArtistRepository artistRepository;
     private final ProjectRepository projectRepository;
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+
+//        private PasswordEncoder encoder(){
+//            return new PasswordEncoder() {
+//                @Override
+//                public String encode(CharSequence rawPassword) {
+//                    return null;
+//                }
+//
+//                @Override
+//                public boolean matches(CharSequence rawPassword, String encodedPassword) {
+//                    return false;
+//                }
+//            };
+//        }
 
 
     //SELECT/READ METHODS START
@@ -57,11 +75,21 @@ public class AudioappService {
         return projectsWithNameMatch;
     }
 
-    public User readUser(Long id)
+    public User readUserById(Long id)
     {
         Optional<User> user = userRepository.findById(id);
         if(user.isPresent()) return user.get();
         throw new EntityNotFoundException("User with this id not found");
+    }
+
+    public User readUser(String username, String password){
+        Optional<User> foundUser = userRepository.findByUsernameAndPassword(username, password);
+        if(!foundUser.isPresent()){
+            throw new EntityNotFoundException("User Not Found");
+        }
+        User userToRead = new User();
+        BeanUtils.copyProperties(foundUser, userToRead);
+        return userToRead;
     }
 
     public List<User> readAllUsers(){
@@ -85,6 +113,16 @@ public class AudioappService {
         Artist artistToCreate = new Artist();
         BeanUtils.copyProperties(artist, artistToCreate);
         return artistRepository.save(artistToCreate);
+    }
+
+    public User createUser(UserCreationRequest user){
+        User convertToUser = new User();
+        BeanUtils.copyProperties(user, convertToUser);
+
+        User userToCreate = new User(convertToUser.getUsername(),
+        convertToUser.getPassword(),
+        convertToUser.getReal_name());
+        return userRepository.save(userToCreate);
     }
     //CREATE METHODS END
 

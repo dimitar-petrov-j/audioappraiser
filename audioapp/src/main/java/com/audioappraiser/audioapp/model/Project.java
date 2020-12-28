@@ -31,4 +31,11 @@ public class Project {
 //    @JoinColumn(name = "artist_id")
 //    @JsonManagedReference
 //    private Artist artist_obj;
+    public Project(){}
+
+    public Project(String name, String artist){
+        this.setName(name);
+        this.setArtist(artist);
+    }
+
 }
