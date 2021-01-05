@@ -16,10 +16,9 @@ import lombok.Setter;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String name;
     private String artist;
-    private Long artist_id;
     private Double rating;
     private Integer reviews;
     private Date release_date;

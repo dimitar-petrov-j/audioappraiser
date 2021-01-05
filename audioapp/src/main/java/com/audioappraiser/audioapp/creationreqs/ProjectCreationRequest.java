@@ -9,7 +9,6 @@ import java.util.Date;
 public class ProjectCreationRequest {
     private String name;
     private String artist;
-    private Long artist_id;
     private Double rating;
     private Integer reviews;
     private Date release_date;

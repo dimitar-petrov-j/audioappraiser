@@ -14,7 +14,7 @@ import lombok.Getter;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    String id;
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private com.audioappraiser.audioapp.model.ERole role;

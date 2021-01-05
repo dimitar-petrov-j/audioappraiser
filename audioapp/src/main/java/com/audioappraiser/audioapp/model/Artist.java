@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Artist{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String name;
     private String alias;
     private Date birthdate;

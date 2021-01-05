@@ -8,19 +8,27 @@ import com.audioappraiser.audioapp.modelrepos.RoleRepository;
 import com.audioappraiser.audioapp.modelrepos.UserRepository;
 import com.audioappraiser.audioapp.service.AudioappService;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.sql.DataSource;
+
 
 @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping(value = "/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
     private final AudioappService audioappService;
+
+    @Autowired
+    @Qualifier("secondaryDataSource")
+    private final DataSource secondaryDataSource;
 
     @Autowired
     UserRepository userRepository;
@@ -34,7 +42,11 @@ public class AuthController {
     }
 
     @GetMapping("/getusers")
-    public ResponseEntity<User> readUsers(@PathVariable Long userId){
+    public ResponseEntity readUsers(@PathVariable Long userId){
+        if(userId == null)
+        {
+            return ResponseEntity.ok(audioappService.readAllUsers());
+        }
         return ResponseEntity.ok(audioappService.readUserById(userId));
     }
 

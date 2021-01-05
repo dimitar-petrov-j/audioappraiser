@@ -29,7 +29,7 @@ const login = (username, password) => {
     };
 
     return fetch(API_URL + "signin", {
-        method: "POST",
+        method: "GET",
         headers: headers,
         body: JSON.stringify(data)
     })

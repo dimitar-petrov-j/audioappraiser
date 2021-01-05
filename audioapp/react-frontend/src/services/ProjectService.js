@@ -23,6 +23,10 @@ class ProjectService {
     getProjectBySearch(query){
         return axios.get(PROJECTS_SEARCH_REST_API_URL+"/"+query);
     }
+
+    createProject(project){
+        return axios.post(PROJECTS_REST_API_URL, project);
+    }
 }
 
 export default new ProjectService();

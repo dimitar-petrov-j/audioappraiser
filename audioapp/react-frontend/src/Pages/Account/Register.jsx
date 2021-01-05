@@ -1,7 +1,6 @@
 /* eslint no-unused-vars: 0, react/prop-types:0 */
 import React, { useState, useRef } from "react";
 
-import CheckButton from "react-validation/build/button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Jumbotron, Form, Alert, Button } from "react-bootstrap";
 
@@ -90,7 +89,6 @@ const Register = (props) => {
     return (
         <Jumbotron>
             <Form onSubmit={handleRegister} ref={form}>
-                {!successful && (
                     <div>
                         <Form.Group controlId="formBasicUserename">
                             <Form.Label>Username</Form.Label>
@@ -131,19 +129,6 @@ const Register = (props) => {
                             <Button variant="primary" type="submit">Sign Up</Button>
                         </div>
                     </div>
-                )}
-
-                {message && (
-                    <div className="form-group">
-                        <div
-                            className={ successful ? "alert alert-success" : "alert alert-danger" }
-                            role="alert"
-                        >
-                            {message}
-                        </div>
-                    </div>
-                )}
-                <CheckButton style={{ display: "none" }} ref={checkBtn} />
             </Form>
         </Jumbotron>
     );

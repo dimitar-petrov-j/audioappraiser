@@ -5,6 +5,7 @@ import {Home, Charts, ProjectPage, Search, Register} from "./Pages/components.js
 // import { Link, withRouter } from "react-router-dom";
 // import CardDeck from "react-bootstrap/CardDeck;"
 import "./App.css";
+import CreateContent from "./Pages/CreateContent.jsx";
 
 class App extends Component {
 
@@ -35,6 +36,7 @@ class App extends Component {
                         {/* <Route path="/" exact component={()=> <Home/>} /> */}
                         <Route path="/search" exact component={()=> <Search/>} />
                         <Route path="/content" component={() => <ProjectPage/>}/>
+                        <Route path="/createcontent" component={() => <CreateContent/>}/>
                         <Route path="/register" exact component={()=><Register/>} />
                     </Switch>
                 </Router>

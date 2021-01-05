@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -17,6 +17,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import javax.sql.DataSource;
 
 @Service
 @RequiredArgsConstructor
@@ -26,6 +31,13 @@ public class AudioappService {
     private final ProjectRepository projectRepository;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+
+    @Autowired
+    private final DataSource primaryDataSource;
+
+    @Autowired
+    @Qualifier("secondaryDataSource")
+    private final DataSource secondaryDataSource;
 
 //        private PasswordEncoder encoder(){
 //            return new PasswordEncoder() {
@@ -43,7 +55,7 @@ public class AudioappService {
 
 
     //SELECT/READ METHODS START
-    public Artist readArtist(Long id)
+    public Artist readArtist(String id)
     {
         Optional<Artist> artist = artistRepository.findById(id);
         if(artist.isPresent()) return artist.get();
@@ -87,9 +99,7 @@ public class AudioappService {
         if(!foundUser.isPresent()){
             throw new EntityNotFoundException("User Not Found");
         }
-        User userToRead = new User();
-        BeanUtils.copyProperties(foundUser, userToRead);
-        return userToRead;
+        return foundUser.get();
     }
 
     public List<User> readAllUsers(){
@@ -99,13 +109,13 @@ public class AudioappService {
 
     //CREATE METHODS START
     public Project createProject(ProjectCreationRequest project) {
-        Optional<Artist> artist = artistRepository.findById(project.getArtist_id());
-        if (!artist.isPresent()) {
+        Artist artist = artistRepository.findByName(project.getArtist());
+        if (artist == null) {
             throw new EntityNotFoundException("Artist Not Found");
         }
         Project projectToCreate = new Project();
         BeanUtils.copyProperties(project, projectToCreate);
-        projectToCreate.setArtist(artist.get().toString());
+        projectToCreate.setArtist(artist.getName().toString());
         return projectRepository.save(projectToCreate);
     }
 
@@ -116,12 +126,9 @@ public class AudioappService {
     }
 
     public User createUser(UserCreationRequest user){
-        User convertToUser = new User();
-        BeanUtils.copyProperties(user, convertToUser);
+        User userToCreate = new User();
 
-        User userToCreate = new User(convertToUser.getUsername(),
-        convertToUser.getPassword(),
-        convertToUser.getReal_name());
+        BeanUtils.copyProperties(user, userToCreate);
         return userRepository.save(userToCreate);
     }
     //CREATE METHODS END
