@@ -1,8 +1,7 @@
-package com.audioappraiser.audioapp.model;
+package com.audioappraiser.audioapp.model.primary;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.audioappraiser.audioapp.model.primary.AlbumType;
 
-import java.util.Objects;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,8 +14,8 @@ import lombok.Setter;
 @Table(name = "projects")
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String name;
     private String artist;
     private Double rating;
@@ -26,10 +25,6 @@ public class Project {
     private AlbumType type;
     private String image;
 
-//    @ManyToOne
-//    @JoinColumn(name = "artist_id")
-//    @JsonManagedReference
-//    private Artist artist_obj;
     public Project(){}
 
     public Project(String name, String artist){

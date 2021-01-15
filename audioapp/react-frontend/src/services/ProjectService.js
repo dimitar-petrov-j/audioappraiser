@@ -25,7 +25,16 @@ class ProjectService {
     }
 
     createProject(project){
-        return axios.post(PROJECTS_REST_API_URL, project);
+        return axios.post(PROJECTS_REST_API_URL, {params:{
+            name: project.name,
+            artist: project.artist,
+            rating: 0,
+            reviews: 0,
+            release_date: project.release_date,
+            type: project.type,
+            image: null
+        }
+        });
     }
 }
 

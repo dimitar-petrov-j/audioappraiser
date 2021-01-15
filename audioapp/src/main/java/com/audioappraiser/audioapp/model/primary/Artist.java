@@ -1,4 +1,4 @@
-package com.audioappraiser.audioapp.model;
+package com.audioappraiser.audioapp.model.primary;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Artist{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String name;
     private String alias;
     private Date birthdate;

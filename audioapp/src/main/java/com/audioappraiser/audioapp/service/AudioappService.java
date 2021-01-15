@@ -1,25 +1,27 @@
 package com.audioappraiser.audioapp.service;
 
 import com.audioappraiser.audioapp.creationreqs.*;
-import com.audioappraiser.audioapp.modelrepos.*;
-import com.audioappraiser.audioapp.model.*;
+import com.audioappraiser.audioapp.model.primary.Artist;
+import com.audioappraiser.audioapp.model.primary.Project;
+import com.audioappraiser.audioapp.model.secondary.User;
 
+import com.audioappraiser.audioapp.modelrepos.primary.ArtistRepository;
+import com.audioappraiser.audioapp.modelrepos.primary.ProjectRepository;
+import com.audioappraiser.audioapp.modelrepos.secondary.RoleRepository;
+import com.audioappraiser.audioapp.modelrepos.secondary.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 
@@ -32,12 +34,16 @@ public class AudioappService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
-    @Autowired
-    private final DataSource primaryDataSource;
+//    @Autowired
+//    @Qualifier("primaryDataSource")
+//    private final DataSource primaryDataSource;
+//
+//    @Autowired
+//    @Qualifier("secondaryDataSource")
+//    private final DataSource secondaryDataSource;
 
     @Autowired
-    @Qualifier("secondaryDataSource")
-    private final DataSource secondaryDataSource;
+    private final EntityManagerFactory entityManagerFactory;
 
 //        private PasswordEncoder encoder(){
 //            return new PasswordEncoder() {
@@ -55,7 +61,7 @@ public class AudioappService {
 
 
     //SELECT/READ METHODS START
-    public Artist readArtist(String id)
+    public Artist readArtist(Long id)
     {
         Optional<Artist> artist = artistRepository.findById(id);
         if(artist.isPresent()) return artist.get();
@@ -109,6 +115,12 @@ public class AudioappService {
 
     //CREATE METHODS START
     public Project createProject(ProjectCreationRequest project) {
+        Project projectToCreate = new Project();
+        BeanUtils.copyProperties(project, projectToCreate);
+        return projectRepository.save(projectToCreate);
+    }
+
+    public Project createProjectWithArtist(ProjectCreationRequest project) {
         Artist artist = artistRepository.findByName(project.getArtist());
         if (artist == null) {
             throw new EntityNotFoundException("Artist Not Found");
@@ -143,4 +155,3 @@ public class AudioappService {
     }
     //DELETE METHODS END
 }
-

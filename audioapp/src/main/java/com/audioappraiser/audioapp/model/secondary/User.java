@@ -1,7 +1,8 @@
-package com.audioappraiser.audioapp.model;
+package com.audioappraiser.audioapp.model.secondary;
 
 import javax.persistence.*;
 
+import com.audioappraiser.audioapp.model.secondary.Role;
 import lombok.Setter;
 import lombok.Getter;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String username;
     private String real_name;
     private String password;

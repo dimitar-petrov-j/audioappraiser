@@ -89,8 +89,31 @@ Link.active {
   font-weight: bold;
 }
 
+.jumbotron-albumpage {
+  width: 200vmin;
+  height: 100vmin;
+  margin-left: 3%;
+}
+
+.img-albumpage-wrapper {
+  width: 65vmin;
+  height: 80vmin;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
 .right {
   float: right !important;
+}
+
+.button-albumpage {
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.right-albumpage {
+  float: right;
 }
 
 .card-deck {
@@ -131,6 +154,20 @@ Link.active {
   }
 
   .header-right {
+    float: none;
+  }
+
+  .jumbotron-albumpage {
+    float: none;
+  }
+
+  .img-albumpage-wrapper {
+    width: 35vmin;
+    height: 40vmin;
+    overflow: hidden;
+  }
+
+  .right-albumpage {
     float: none;
   }
 }

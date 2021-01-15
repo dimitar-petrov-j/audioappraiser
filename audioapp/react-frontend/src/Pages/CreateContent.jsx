@@ -1,6 +1,5 @@
 /* eslint no-unused-vars: 0 */
 import React, {useState, useRef } from "react";
-import { v4 as uuidv4 } from 'uuid';
 import ProjectService from "../services/ProjectService";
 import DatePicker from "react-datepicker";
 
@@ -29,7 +28,7 @@ const CreateContent = (props) =>{
 
     const [projectname, setProjectName] = useState("");
     const [projectartist, setProjectArtist] = useState("");
-    const [projecttype, setProjectType] = useState({Album: 'ALBUM', Single: 'SINGLE', Mixtape: 'MIXTAPE'});
+    const [projecttype, setProjectType] = useState({Album: "ALBUM", Single: "SINGLE", Mixtape: "MIXTAPE", EP: "EP"});
     const [projectdate, setProjectDate] = useState(new Date());
 
     //To remove before release
@@ -51,10 +50,10 @@ const CreateContent = (props) =>{
         setProjectType(value);
     };
 
-    const onChangeProjectDate = (e) => {
-        const value = e.target.value;
-        setProjectDate(value);
-    };
+    // const onChangeProjectDate = (e) => {
+    //     const value = e.target.value;
+    //     setProjectDate(value);
+    // };
 
     const handleProjectCreation = (e) => {
         e.preventDefault();
@@ -64,7 +63,7 @@ const CreateContent = (props) =>{
 
         // form.current.validateAll();
 
-        const project = new Object({projectname, projectartist, projecttype, projectdate});
+        const project = new Object({id: 10, name: projectname, artist: projectartist, type: projecttype, release_date: projectdate});
 
         ProjectService.createProject(project).then(
             (response) => {
@@ -80,10 +79,11 @@ const CreateContent = (props) =>{
     };
 
     return(
-        <Jumbotron>
+        <div>
+        <Jumbotron className="jumbotron-albumpage">
             <Form onSubmit={handleProjectCreation} ref={form}>
                     <div>
-                        <Form.Group controlId="formBasicUserename">
+                        <Form.Group>
                             <Form.Label>Project Name</Form.Label>
                             <Form.Control
                                 type="text"
@@ -95,7 +95,7 @@ const CreateContent = (props) =>{
                             />
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
+                        <Form.Group>
                             <Form.Label>Artist Name</Form.Label>
                             <Form.Control
                                 className="form-control"
@@ -106,35 +106,89 @@ const CreateContent = (props) =>{
                             />
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Album Type</Form.Label>
-                            <Form.Control
-                                className="form-control"
+                        <Form.Group>
+                            <Form.Label>Album Type</Form.Label><br/>
+                                <input
+                                type="radio"
+                                value="ALBUM"
                                 name="type"
-                                value={projecttype}
-                                onChange={onChangeProjectType}
-                                validations={[required]}
-                            />
+                                className="form-check-input"
+                                onClick={onChangeProjectType}
+                                /> Album
+                                <br/>
+                                <input
+                                type="radio"
+                                value="SINGLE"
+                                name="type"
+                                className="form-check-input"
+                                onClick={onChangeProjectType}
+                                /> Single
+                                <br/>
+                                <input
+                                type="radio"
+                                value="EP"
+                                name="type"
+                                className="form-check-input"
+                                onClick={onChangeProjectType}
+                                /> EP
+                                <br/>
+                                <input
+                                type="radio"
+                                value="MIXTAPE"
+                                name="type"
+                                className="form-check-input"
+                                onClick={onChangeProjectType}
+                                /> Mixtape
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Date</Form.Label>
-                            <Form.Control
-                                className="form-control"
-                                name="date"
-                                value={projectdate}
-                                onChange={onChangeProjectDate}
-                                validations={[required]}
-                            />
-                            <DatePicker selected={projectdate} onChange={date => onChangeProjectDate(date)} />
+                        <Form.Group controlId="formDate">
+                            <DatePicker selected={projectdate} onChange={date => setProjectDate(date)} />
                         </Form.Group>
 
                         <div className="form-group">
-                            <Button variant="primary" type="submit">Sign In</Button>
+                            <Button variant="primary" type="submit">Submit</Button>
                         </div>
                     </div>
             </Form>
         </Jumbotron>
+
+        <Jumbotron className="jumbotron-albumpage">
+        <Form onSubmit={handleArtistCreation} ref={form}>
+                    <div>
+                        <Form.Group>
+                            <Form.Label>Artist Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                className="form-control"
+                                name="artistname"
+                                value={artistname}
+                                onChange={onChangeArtistName}
+                                validations={[required]}
+                            />
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.Label>Artist Alias</Form.Label>
+                            <Form.Control
+                                className="form-control"
+                                name="artist"
+                                value={artistalias}
+                                onChange={onChangeArtistAlias}
+                                validations={[required]}
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId="formDate">
+                            <DatePicker selected={projectdate} onChange={date => setProjectDate(date)} />
+                        </Form.Group>
+
+                        <div className="form-group">
+                            <Button variant="primary" type="submit">Submit Artist</Button>
+                        </div>
+                    </div>
+            </Form>
+        </Jumbotron>
+        </div>
     );
 };
 

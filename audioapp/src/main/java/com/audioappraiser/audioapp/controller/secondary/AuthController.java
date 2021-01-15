@@ -1,18 +1,13 @@
-package com.audioappraiser.audioapp.controller;
+package com.audioappraiser.audioapp.controller.secondary;
 
 import com.audioappraiser.audioapp.creationreqs.UserCreationRequest;
-import com.audioappraiser.audioapp.model.User;
-import com.audioappraiser.audioapp.model.Role;
-import com.audioappraiser.audioapp.model.ERole;
-import com.audioappraiser.audioapp.modelrepos.RoleRepository;
-import com.audioappraiser.audioapp.modelrepos.UserRepository;
+import com.audioappraiser.audioapp.model.secondary.User;
+import com.audioappraiser.audioapp.modelrepos.secondary.RoleRepository;
+import com.audioappraiser.audioapp.modelrepos.secondary.UserRepository;
 import com.audioappraiser.audioapp.service.AudioappService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,9 +21,9 @@ import javax.sql.DataSource;
 public class AuthController {
     private final AudioappService audioappService;
 
-    @Autowired
-    @Qualifier("secondaryDataSource")
-    private final DataSource secondaryDataSource;
+//    @Autowired
+//    @Qualifier("datasource-secondary")
+//    private final DataSource secondaryDataSource;
 
     @Autowired
     UserRepository userRepository;
@@ -41,7 +36,7 @@ public class AuthController {
         return ResponseEntity.ok(audioappService.readUser(username, password));
     }
 
-    @GetMapping("/getusers")
+    @GetMapping("/users")
     public ResponseEntity readUsers(@PathVariable Long userId){
         if(userId == null)
         {

@@ -82,7 +82,7 @@ const Login = (props) => {
     }
 
     return (
-        <Jumbotron>
+        <Jumbotron className="jumbotron-albumpage">
             <Form onSubmit={handleLogin} ref={form}>
                     <div>
                         <Form.Group controlId="formBasicUserename">

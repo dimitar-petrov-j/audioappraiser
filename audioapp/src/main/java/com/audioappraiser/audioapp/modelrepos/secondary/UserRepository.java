@@ -1,7 +1,7 @@
-package com.audioappraiser.audioapp.modelrepos;
+package com.audioappraiser.audioapp.modelrepos.secondary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.audioappraiser.audioapp.model.User;
+import com.audioappraiser.audioapp.model.secondary.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

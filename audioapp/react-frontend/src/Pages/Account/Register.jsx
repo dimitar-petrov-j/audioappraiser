@@ -87,7 +87,7 @@ const Register = (props) => {
     };
 
     return (
-        <Jumbotron>
+        <Jumbotron className="jumbotron-albumpage">
             <Form onSubmit={handleRegister} ref={form}>
                     <div>
                         <Form.Group controlId="formBasicUserename">

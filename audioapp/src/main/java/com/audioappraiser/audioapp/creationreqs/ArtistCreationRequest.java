@@ -1,6 +1,6 @@
 package com.audioappraiser.audioapp.creationreqs;
 
-import com.audioappraiser.audioapp.model.Project;
+import com.audioappraiser.audioapp.model.primary.Project;
 import java.util.Date;
 import java.util.List;
 

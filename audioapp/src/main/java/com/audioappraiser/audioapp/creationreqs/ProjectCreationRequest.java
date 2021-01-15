@@ -1,6 +1,6 @@
 package com.audioappraiser.audioapp.creationreqs;
 
-import com.audioappraiser.audioapp.model.AlbumType;
+import com.audioappraiser.audioapp.model.primary.AlbumType;
 import lombok.Data;
 
 import java.util.Date;

@@ -1,10 +1,10 @@
-package com.audioappraiser.audioapp.controller;
+package com.audioappraiser.audioapp.controller.primary;
 
 import com.audioappraiser.audioapp.service.AudioappService;
 import com.audioappraiser.audioapp.creationreqs.ArtistCreationRequest;
 import com.audioappraiser.audioapp.creationreqs.ProjectCreationRequest;
-import com.audioappraiser.audioapp.model.Artist;
-import com.audioappraiser.audioapp.model.Project;
+import com.audioappraiser.audioapp.model.primary.Artist;
+import com.audioappraiser.audioapp.model.primary.Project;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -55,7 +55,6 @@ public class AudioappController {
     @GetMapping("/projects-rating")
     public ResponseEntity readProjectsByRating(@RequestParam(required = false) Long id){
         return ResponseEntity.ok(audioappService.readAllProjectsByRating());
-
     }
 
     //Artists CRUD
@@ -87,8 +86,4 @@ public class AudioappController {
     public ResponseEntity<Project> createProjectWithJavaConfig(@RequestBody ProjectCreationRequest request) {
         return ResponseEntity.ok(audioappService.createProject(request));
     }
-
-
-
-
 }

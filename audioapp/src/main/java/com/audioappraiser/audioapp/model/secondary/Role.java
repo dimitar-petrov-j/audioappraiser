@@ -1,8 +1,8 @@
-package com.audioappraiser.audioapp.model;
+package com.audioappraiser.audioapp.model.secondary;
 
 import javax.persistence.*;
-import java.util.Set;
 
+import com.audioappraiser.audioapp.model.secondary.ERole;
 import lombok.Setter;
 import lombok.Getter;
 
@@ -14,8 +14,8 @@ import lombok.Getter;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    String id;
+    private Long id;
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private com.audioappraiser.audioapp.model.ERole role;
+    private ERole role;
 }

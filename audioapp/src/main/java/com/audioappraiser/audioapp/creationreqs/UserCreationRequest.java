@@ -1,7 +1,6 @@
 package com.audioappraiser.audioapp.creationreqs;
 
-import com.audioappraiser.audioapp.model.ERole;
-import com.audioappraiser.audioapp.model.Role;
+import com.audioappraiser.audioapp.model.secondary.Role;
 
 import java.util.Set;
 
