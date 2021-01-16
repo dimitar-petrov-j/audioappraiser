@@ -152,7 +152,7 @@ const CreateContent = (props) =>{
             </Form>
         </Jumbotron>
 
-        <Jumbotron className="jumbotron-albumpage">
+        {/* <Jumbotron className="jumbotron-albumpage">
         <Form onSubmit={handleArtistCreation} ref={form}>
                     <div>
                         <Form.Group>
@@ -187,7 +187,7 @@ const CreateContent = (props) =>{
                         </div>
                     </div>
             </Form>
-        </Jumbotron>
+        </Jumbotron> */}
         </div>
     );
 };

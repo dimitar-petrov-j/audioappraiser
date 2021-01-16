@@ -21,18 +21,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EntityScan("com.audioappraiser.audioapp.model")
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class AudioappApplication {
-	@Autowired @Qualifier("projectRepository")
-	ProjectRepository projectRepository;
-
-	@Autowired @Qualifier("artistRepository")
-	ArtistRepository artistRepository;
-
-	@Autowired @Qualifier("userRepository")
-	UserRepository userRepository;
-
-	@Autowired @Qualifier("roleRepository")
-	RoleRepository roleRepository;
-
 	public static void main(String[] args) {
 		SpringApplication.run(AudioappApplication.class, args);
 	}

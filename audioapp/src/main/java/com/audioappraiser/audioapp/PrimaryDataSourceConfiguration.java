@@ -29,20 +29,18 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = {"com.audioappraiser.audioapp.model.primary"},
-        entityManagerFactoryRef = "entityManagerFactory",
-        transactionManagerRef = "transactionManager")
+        basePackages = {"com.audioappraiser.audioapp.model.primary"})
 public class PrimaryDataSourceConfiguration {
     @Primary
     @Bean(name = "primaryDataSource")
-    @ConfigurationProperties("datasource-primary")
+    @ConfigurationProperties("spring.datasource-primary")
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().build();
     }
 
     @Primary
     @Bean
-    NamedParameterJdbcOperations jdbcOperations(
+    NamedParameterJdbcOperations jdbcPrimaryOperations(
             @Qualifier("primaryDataSource") DataSource sqlServerDs) {
         return new NamedParameterJdbcTemplate(sqlServerDs);
     }

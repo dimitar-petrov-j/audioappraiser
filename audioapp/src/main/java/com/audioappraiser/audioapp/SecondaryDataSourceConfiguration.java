@@ -24,18 +24,16 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = {"com.audioappraiser.audioapp.model.secondary"},
-        entityManagerFactoryRef = "entityManagerFactory",
-        transactionManagerRef = "transactionManager")
+        basePackages = {"com.audioappraiser.audioapp.model.secondary"})
 public class SecondaryDataSourceConfiguration {
     @Bean(name = "secondaryDataSource")
-    @ConfigurationProperties("datasource-secondary")
+    @ConfigurationProperties("spring.datasource-secondary")
     public DataSource secondaryDataSource() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean
-    NamedParameterJdbcOperations jdbcOperations(
+    NamedParameterJdbcOperations jdbcSecondaryOperations(
             @Qualifier("secondaryDataSource") DataSource sqlServerDs) {
         return new NamedParameterJdbcTemplate(sqlServerDs);
     }
