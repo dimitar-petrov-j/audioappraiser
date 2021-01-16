@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-        working-directory: audioapp/react-frontend
+        working-directory: audioapp/react-frontend/
       - run: npm run build --if-present
-        working-directory: audioapp/react-frontend
+        working-directory: audioapp/react-frontend/
       - run: npm test
-        working-directory: audioapp/react-frontend
+        working-directory: audioapp/react-frontend/
