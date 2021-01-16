@@ -1,3 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
-com.audioappraiser.audioapp.model.User-agent: *
+com.audioappraiser.audioapp.model.secondary.User-agent: *
 Disallow:

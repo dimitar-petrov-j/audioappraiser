@@ -1,6 +1,6 @@
 package com.audioappraiser.audioapp.creationreqs;
 
-import com.audioappraiser.audioapp.model.AlbumType;
+import com.audioappraiser.audioapp.model.primary.AlbumType;
 import lombok.Data;
 
 import java.util.Date;
@@ -9,7 +9,6 @@ import java.util.Date;
 public class ProjectCreationRequest {
     private String name;
     private String artist;
-    private Long artist_id;
     private Double rating;
     private Integer reviews;
     private Date release_date;
