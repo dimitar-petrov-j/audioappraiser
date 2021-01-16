@@ -29,4 +29,4 @@ jobs:
       - run: npm run build --if-present
         working-directory: audioapp/react-frontend/
       - run: npm test
-        working-directory: audioapp/react-frontend/
+        working-directory: audioapp/react-frontend/test
