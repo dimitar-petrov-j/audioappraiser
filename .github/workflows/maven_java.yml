@@ -20,5 +20,5 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Maven
-        run: mvn test
+        run: mvn clean package
         working-directory: audioapp/
