@@ -1,4 +1,4 @@
-package com.audioappraiser.audioapp.testing.controller;
+package com.audioappraiser.audioapp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.is;
@@ -20,7 +20,7 @@ import com.audioappraiser.audioapp.modelrepos.secondary.RoleRepository;
 import com.audioappraiser.audioapp.modelrepos.secondary.UserRepository;
 import com.audioappraiser.audioapp.service.AudioappService;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -32,7 +32,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = AudioappController.class,  excludeAutoConfiguration = SecurityAutoConfiguration.class)
-public class ProjectControllerTest {
+public class ProjectControllerTests {
 
     @Autowired
     private MockMvc mvc;

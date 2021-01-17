@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly react-test-renderer 1`] = `
+<Jumbotron
+  fluid={false}
+>
+  <Carousel
+    controls={true}
+    defaultActiveIndex={0}
+    fade={false}
+    indicators={true}
+    interval={5000}
+    keyboard={true}
+    nextIcon={
+      <span
+        aria-hidden="true"
+        className="carousel-control-next-icon"
+      />
+    }
+    nextLabel="Next"
+    pause="hover"
+    prevIcon={
+      <span
+        aria-hidden="true"
+        className="carousel-control-prev-icon"
+      />
+    }
+    prevLabel="Previous"
+    slide={true}
+    touch={true}
+    wrap={true}
+  >
+    <CarouselItem
+      interval={5000}
+    >
+      <img
+        alt="First slide"
+        className="d-block w-100 h-75 slider"
+        fluid={true}
+        src="https://i.imgur.com/WFZX95f.jpg"
+      />
+      <CarouselCaption>
+        <h3>
+          First slide label
+        </h3>
+        <p>
+          Nulla vitae elit libero, a pharetra augue mollis interdum.
+        </p>
+      </CarouselCaption>
+    </CarouselItem>
+    <CarouselItem
+      interval={5000}
+    >
+      <img
+        alt="Third slide"
+        className="d-block w-100"
+        fluid={true}
+        src="https://i.imgur.com/pLvM4jP.jpg"
+      />
+      <CarouselCaption>
+        <h3>
+          Second slide label
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </CarouselCaption>
+    </CarouselItem>
+    <CarouselItem
+      interval={5000}
+    >
+      <img
+        alt="Third slide"
+        className="d-block w-100"
+        fluid={true}
+        src="https://i.imgur.com/ZNlQMSS.jpg"
+      />
+      <CarouselCaption>
+        <h3>
+          Third slide label
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </CarouselCaption>
+    </CarouselItem>
+  </Carousel>
+  <br />
+  <CardDeck>
+    <Card
+      body={false}
+    >
+      <CardImg
+        src="https://i.imgur.com/mXbgxpv.png"
+        variant="top"
+      />
+      <CardBody>
+        <CardTitle>
+          Card title
+        </CardTitle>
+        <CardText>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        </CardText>
+      </CardBody>
+      <CardFooter>
+        <small
+          className="text-muted"
+        >
+          Last updated 3 mins ago
+        </small>
+      </CardFooter>
+    </Card>
+    <Card
+      body={false}
+    >
+      <CardImg
+        src="https://i.imgur.com/uTnv8uB.png"
+        variant="top"
+      />
+      <CardBody>
+        <CardTitle>
+          Card title
+        </CardTitle>
+        <CardText>
+          This card has supporting text below as a natural lead-in to additional content.
+           
+        </CardText>
+      </CardBody>
+      <CardFooter>
+        <small
+          className="text-muted"
+        >
+          Last updated 3 mins ago
+        </small>
+      </CardFooter>
+    </Card>
+    <Card
+      body={false}
+    >
+      <CardImg
+        src="https://images.genius.com/68e3682f2d9128cfc55576414a571a2b.1000x563x1.jpg"
+        variant="top"
+      />
+      <CardBody>
+        <CardTitle>
+          Card title
+        </CardTitle>
+        <CardText>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+        </CardText>
+      </CardBody>
+      <CardFooter>
+        <small
+          className="text-muted"
+        >
+          Last updated 3 mins ago
+        </small>
+      </CardFooter>
+    </Card>
+    <Card
+      body={false}
+    >
+      <CardImg
+        src="https://i.redd.it/wbrp565sxje11.png"
+        variant="top"
+      />
+      <CardBody>
+        <CardTitle>
+          Card title
+        </CardTitle>
+        <CardText>
+          This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+        </CardText>
+      </CardBody>
+      <CardFooter>
+        <small
+          className="text-muted"
+        >
+          Last updated 3 mins ago
+        </small>
+      </CardFooter>
+    </Card>
+  </CardDeck>
+  <br />
+  <br />
+  <Row
+    noGutters={false}
+  >
+    <Col>
+      <Card
+        body={false}
+      >
+        <CardImg
+          src="https://i.imgur.com/e4ulAHT.jpg"
+          variant="top"
+        />
+        <CardBody>
+          <CardTitle>
+            Card Title
+          </CardTitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the bulk of the card's content. 
+             
+          </CardText>
+          <Button
+            active={false}
+            disabled={false}
+            variant="primary"
+          >
+            Review
+          </Button>
+        </CardBody>
+      </Card>
+    </Col>
+    <Col>
+      <Toast>
+        <ToastHeader
+          closeButton={true}
+          closeLabel="Close"
+        >
+          <img
+            alt=""
+            className="rounded mr-2"
+            src="holder.js/20x20?text=%20"
+          />
+          <strong
+            className="mr-auto"
+          >
+            Bootstrap
+          </strong>
+        </ToastHeader>
+        <ToastBody>
+          See? Just like this.
+        </ToastBody>
+      </Toast>
+      <Toast>
+        <ToastHeader
+          closeButton={true}
+          closeLabel="Close"
+        >
+          <img
+            alt=""
+            className="rounded mr-2"
+            src="holder.js/20x20?text=%20"
+          />
+          <strong
+            className="mr-auto"
+          >
+            Bootstrap
+          </strong>
+        </ToastHeader>
+        <ToastBody>
+          Heads up, toasts will stack automatically
+        </ToastBody>
+      </Toast>
+      <Toast>
+        <ToastHeader
+          closeButton={true}
+          closeLabel="Close"
+        >
+          <img
+            alt=""
+            className="rounded mr-2"
+            src="holder.js/20x20?text=%20"
+          />
+          <strong
+            className="mr-auto"
+          >
+            Bootstrap
+          </strong>
+        </ToastHeader>
+        <ToastBody>
+          Heads up, toasts will stack automatically
+        </ToastBody>
+      </Toast>
+      <Toast>
+        <ToastHeader
+          closeButton={true}
+          closeLabel="Close"
+        >
+          <img
+            alt=""
+            className="rounded mr-2"
+            src="holder.js/20x20?text=%20"
+          />
+          <strong
+            className="mr-auto"
+          >
+            Bootstrap
+          </strong>
+        </ToastHeader>
+        <ToastBody>
+          Heads up, toasts will stack automatically
+        </ToastBody>
+      </Toast>
+      <Toast>
+        <ToastHeader
+          closeButton={true}
+          closeLabel="Close"
+        >
+          <img
+            alt=""
+            className="rounded mr-2"
+            src="holder.js/20x20?text=%20"
+          />
+          <strong
+            className="mr-auto"
+          >
+            Bootstrap
+          </strong>
+        </ToastHeader>
+        <ToastBody>
+          Heads up, toasts will stack automatically
+        </ToastBody>
+      </Toast>
+    </Col>
+    <Col>
+      3 of 3
+    </Col>
+  </Row>
+  <br />
+  <Card
+    body={false}
+    className="bg-dark text-white"
+  >
+    <CardImg
+      alt="Card image"
+      src="https://i.imgur.com/L0Np4gM.jpg"
+      variant={null}
+    />
+    <CardImgOverlay>
+      <br />
+      <CardText>
+        Welcome to AudioAppraiser! A public database for musical artists and commercial musical projects!
+      </CardText>
+      <CardText>
+        Currently storing 1 424 348 Artists , 4 394 470 Releases, 113 772 Labels, 79 785 111 Ratings, 2 499 210 Reviews
+      </CardText>
+    </CardImgOverlay>
+  </Card>
+  <br />
+  <img
+    className="home-intro-content-img"
+    src="https://i.imgur.com/n9H3tSh.png"
+  />
+</Jumbotron>
+`;

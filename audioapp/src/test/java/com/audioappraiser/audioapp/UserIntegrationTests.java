@@ -1,4 +1,4 @@
-package com.audioappraiser.audioapp.testing.model;
+package com.audioappraiser.audioapp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.is;
@@ -11,11 +11,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.*;
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.audioappraiser.audioapp.model.secondary.User;
@@ -23,7 +24,7 @@ import com.audioappraiser.audioapp.modelrepos.secondary.UserRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class UserIntegrationTest {
+public class UserIntegrationTests {
     @Autowired
     private TestEntityManager entityManager;
 
