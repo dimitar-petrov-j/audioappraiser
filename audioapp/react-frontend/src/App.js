@@ -8,21 +8,6 @@ import "./App.css";
 import CreateContent from "./Pages/CreateContent.jsx";
 
 class App extends Component {
-
-    // state = {};
-
-    // componentDidMount() {
-    //     setInterval(this.hello, 250);
-    // }
-
-    // hello = () => {
-    //     fetch('/api/hello')
-    //         .then(response => response.text())
-    //         .then(message => {
-    //             this.setState({message: message});
-    //         });
-    // };
-
     render() {
         return (
             <div className="App">
@@ -33,7 +18,6 @@ class App extends Component {
                     <Switch>
                         <Route path="/" exact component={()=> <Home/>} />
                         <Route path="/charts" exact component={()=> <Charts/>} />
-                        {/* <Route path="/" exact component={()=> <Home/>} /> */}
                         <Route path="/search" exact component={()=> <Search/>} />
                         <Route path="/content" component={() => <ProjectPage/>}/>
                         <Route path="/createcontent" component={() => <CreateContent/>}/>

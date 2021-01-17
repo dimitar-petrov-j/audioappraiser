@@ -31,10 +31,6 @@ const CreateContent = (props) =>{
     const [projecttype, setProjectType] = useState({Album: "ALBUM", Single: "SINGLE", Mixtape: "MIXTAPE", EP: "EP"});
     const [projectdate, setProjectDate] = useState(new Date());
 
-    //To remove before release
-    const [successful, setSuccessful] = useState(false);
-    const [message, setMessage] = useState("");
-
     const onChangeProjectName = (e) => {
         const value = e.target.value;
         setProjectName(value);
@@ -50,30 +46,18 @@ const CreateContent = (props) =>{
         setProjectType(value);
     };
 
-    // const onChangeProjectDate = (e) => {
-    //     const value = e.target.value;
-    //     setProjectDate(value);
-    // };
-
     const handleProjectCreation = (e) => {
         e.preventDefault();
-
-        setMessage("");
-        setSuccessful(false);
-
-        // form.current.validateAll();
 
         const project = new Object({id: 10, name: projectname, artist: projectartist, type: projecttype, release_date: projectdate});
 
         ProjectService.createProject(project).then(
             (response) => {
                 window.location.reload();
-                setSuccessful(true);
                 console.log("success");
             },
             (error) => {
-                setMessage(error);
-                setSuccessful(false);
+                console.log("error");
             }
         );
     };

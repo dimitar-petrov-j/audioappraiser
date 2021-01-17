@@ -8,19 +8,6 @@ function Charts(){
 
     const [albums, readyAlbums] = useState([]);
 
-    // function ProjectsRead()
-    // {
-    //     fetch('http://localhost:8080/api/projects')
-    //         .then(response => response.text())
-    //         .then(message => {
-    //             PrintMessageToState(message)
-    //         });
-    // }
-
-    // function PrintMessageToState(message){
-    //     readyAlbums(message);
-    // }
-
     useEffect(() => {
         ProjectService.getProjectsCharts().then((response) => {
             readyAlbums(response.data);

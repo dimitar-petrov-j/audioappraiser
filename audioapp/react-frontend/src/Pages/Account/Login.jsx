@@ -43,8 +43,7 @@ const Login = (props) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [successful, setSuccessful] = useState(false);
-    const [message, setMessage] = useState("");
+
 
     const onChangeUsername = (e) => {
         const username = e.target.value;

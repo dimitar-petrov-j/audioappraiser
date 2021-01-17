@@ -21,10 +21,6 @@ import javax.sql.DataSource;
 public class AuthController {
     private final AudioappService audioappService;
 
-//    @Autowired
-//    @Qualifier("datasource-secondary")
-//    private final DataSource secondaryDataSource;
-
     @Autowired
     UserRepository userRepository;
 

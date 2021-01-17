@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {Link, withRouter} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { NavDropdown } from "react-bootstrap";
 
 function Header()
 {
@@ -18,10 +19,13 @@ function Header()
               <Nav.Link as={Link} to="/charts">Charts</Nav.Link>
               <Nav.Link as={Link} to="/search">Search</Nav.Link>
 
+              {/* <NavDropdown title="Account" class="right">
+                  <NavDropdown.Item as={Link} to="/register">Register</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
+              </NavDropdown> */}
+
               {/* <Nav.Link as={Link} to="/createcontent">Add Project/Artist</Nav.Link> */}
               {/* it is set to /register only for testing */}
-
-              <Nav.Link as={Link} class="right" to="/register">Account</Nav.Link>
             </Nav>
           </Navbar.Collapse>
       </Navbar>

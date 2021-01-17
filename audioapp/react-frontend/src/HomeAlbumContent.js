@@ -10,7 +10,6 @@ function HomeAlbumContent(props)
     const [content] = useState([props.content]);
 
     function goToAlbumDetail(){
-      //VERY SHODDY WAY OF REDIRECTING - LOOK FOR STH ELSE
       let change_initial = window.location.href;
       let change_replace_1 = change_initial.replace(/charts/g, "content");
       let change = change_replace_1.replace(/search/, "content");
@@ -32,15 +31,3 @@ function HomeAlbumContent(props)
 }
 
 export default HomeAlbumContent;
-
-/* <Card className='album-card'>
-<Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body >
-      <Card.Title>Nº{props.album.place}<br/>{props.album.name}</Card.Title>
-        <Card.Text>
-        By {props.album.artist}. <br/> Released {props.album.releasedate} <br/>
-        Rating: {props.album.rating}/5
-        </Card.Text>
-      <Button variant="primary">Check Details</Button>
-  </Card.Body>
-</Card> */

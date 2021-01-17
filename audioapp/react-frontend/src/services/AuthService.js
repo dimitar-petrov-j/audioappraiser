@@ -10,7 +10,8 @@ const register = (username, password, real_name) => {
         body: JSON.stringify({
                 username: username,
                 password: password,
-                real_name: real_name
+                real_name: real_name,
+                type: "ADMIN"
             }
         ),
     });
